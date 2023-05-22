@@ -1,5 +1,5 @@
 server:
-  port: ${random.int(10000,10010)}
+  port: 10000 #${random.int(10000,10010)}
 spring:
   h2:
     console:
