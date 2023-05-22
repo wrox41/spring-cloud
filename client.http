@@ -1,0 +1,35 @@
+POST http://localhost:10003/payments
+Accept: application/json
+Content-Type: application/json
+
+{
+  "value": "200 PLN"
+}
+
+###
+
+GET http://localhost:8080/payments/0481ebd5-7ecf-4844-926e-9b86910a5dc9
+Accept: application/json
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/payments/started?pageNumer=0
+Accept: application/json
+Content-Type: application/json
+
+###
+
+GET http://localhost:8888/master/application-default.yml
+
+###
+
+GET http://localhost:8888/master/application-development.yml
+
+###
+
+GET http://localhost:8888/master/payments-service.yml
+
+###
+
+GET http://localhost:8888/master/payments-service-development.properties
