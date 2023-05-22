@@ -4,7 +4,10 @@ spring:
   profiles:
     active: development
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:http://localhost:8888,optional:configserver:http://localhost:8889
   cloud:
     config:
-      label: master
+      label: main
+      #fail-fast: on
+      #request-connect-timeout: 10
+      #request-read-timeout: 10
