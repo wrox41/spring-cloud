@@ -14,3 +14,6 @@ spring:
       bindings:
         payments-out-0:
           destination: payment-events
+timeApi:
+  endpoint: http://worldtimeapi.org/api/timezone
+  timezone: Europe/Warsaw
