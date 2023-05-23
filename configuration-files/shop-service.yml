@@ -8,4 +8,4 @@ spring:
       bindings:
         paymentEventsConsumer-in-0:
           destination: payment-events
-          group: ${random.int(1,1000)}
+          group: ${random.uuid}
