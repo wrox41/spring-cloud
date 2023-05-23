@@ -4,7 +4,7 @@ import lombok.extern.java.Log;
 import pl.training.payments.ports.ShopService;
 
 @Log
-public class Shop implements ShopService {
+public class OrderProcessor implements ShopService {
 
     private static final String DEFAULT_CURRENCY = "PLN";
 
