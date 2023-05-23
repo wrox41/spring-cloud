@@ -8,4 +8,20 @@ spring:
       bindings:
         paymentEventsConsumer-in-0:
           destination: payment-events
-          group: ${random.uuid}
+          group: ${random.uuid} #shop
+#    stream:
+#      bindings:
+#        productsListener-in-0:
+#          destination: products-events
+#          group: shop
+#          binder: kafka1
+#      binders:
+#        kafka1:
+#          type: kafka
+#          environment:
+#            spring:
+#              cloud:
+#                stream:
+#                  kafka:
+#                    binder:
+#                      brokers: localhost:9092
