@@ -2,3 +2,10 @@ server:
   port: 20000
 api:
   payments: http://PAYMENTS-SERVICE/payments
+spring:
+  cloud:
+    stream:
+      bindings:
+        paymentEventsConsumer-in-0:
+          destination: payment-events
+          group: ${random.int(1,1000)}
