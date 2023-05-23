@@ -24,6 +24,7 @@ public class PaymentProcessor implements PaymentService {
     public Payment process(PaymentRequest paymentRequest) {
         var paymentValue = calculatePaymentValue(paymentRequest.getValue());
         var payment = createPayment(paymentValue);
+        log.info("Payment created " + payment);
         return paymentsRepository.save(payment);
     }
 
