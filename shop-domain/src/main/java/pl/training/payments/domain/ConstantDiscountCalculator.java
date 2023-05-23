@@ -3,7 +3,7 @@ package pl.training.payments.domain;
 import lombok.Value;
 
 @Value
-public class ConstantDiscountCalculator {
+public class ConstantDiscountCalculator implements DiscountCalculator {
 
     long value;
 

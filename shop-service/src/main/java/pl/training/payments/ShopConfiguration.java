@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import pl.training.payments.domain.ConstantDiscountCalculator;
+import pl.training.payments.domain.DiscountCalculator;
 import pl.training.payments.domain.OrderProcessor;
 import pl.training.payments.ports.PaymentsService;
 import pl.training.payments.ports.ShopService;
@@ -17,7 +18,7 @@ import pl.training.payments.ports.ShopService;
 public class ShopConfiguration {
 
     @Bean
-    public ShopService shopService(PaymentsService paymentsService, ConstantDiscountCalculator discountCalculator) {
+    public ShopService shopService(PaymentsService paymentsService,DiscountCalculator discountCalculator) {
         return new OrderProcessor(paymentsService, discountCalculator);
     }
 
@@ -29,7 +30,7 @@ public class ShopConfiguration {
 
     @RefreshScope
     @Bean
-    public ConstantDiscountCalculator discountCalculator(@Value("${discount}") long discount) {
+    public DiscountCalculator discountCalculator(@Value("${discount}") long discount) {
         return new ConstantDiscountCalculator(discount);
     }
 

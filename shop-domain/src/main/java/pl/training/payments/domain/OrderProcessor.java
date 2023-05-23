@@ -10,7 +10,7 @@ import pl.training.payments.ports.ShopService;
 public class OrderProcessor implements ShopService {
 
     private final PaymentsService paymentsService;
-    private final ConstantDiscountCalculator discountCalculator;
+    private final DiscountCalculator discountCalculator;
 
     private static final String DEFAULT_CURRENCY = "PLN";
 
