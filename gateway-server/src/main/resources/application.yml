@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: gateway-server
+  profiles:
+    active: development
+  config:
+    import: optional:configserver:http://localhost:8888,optional:configserver:http://localhost:8889
+  cloud:
+    config:
+      label: 005-Http-communication
+      #fail-fast: true
+      #request-connect-timeout: 10
+      #request-read-timeout: 10
