@@ -17,8 +17,8 @@ public interface ReactiveMongoPaymentPersistenceMapper {
     @Mapping(target = "currency", expression = "java(payment.getValue().getCurrency().getCurrencyCode())")
     PaymentDocument toDocument(Payment payment);
 
-    @Mapping(target = "value", expression = "java(Money.of(paymentEntity.getValue(), paymentEntity.getCurrency()))")
-    Payment toDomain(PaymentDocument paymentEntity);
+    @Mapping(target = "value", expression = "java(Money.of(paymentDocument.getValue(), paymentDocument.getCurrency()))")
+    Payment toDomain(PaymentDocument paymentDocument);
 
     String toDocument(PaymentStatus paymentStatus);
 
