@@ -20,7 +20,7 @@ public class StreamPaymentAdapter {
 
     private final DiscoveryClient discoveryClient;
 
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         WebClient.builder()
                 .build()
