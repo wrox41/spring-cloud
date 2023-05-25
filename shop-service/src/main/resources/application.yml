@@ -10,3 +10,12 @@ spring:
       label: main
 encrypt:
   key: SURMETRIYKEQ
+resilience4j.retry:
+  instances:
+    payments:
+      maxAttempts: 3
+      waitDuration: 10s
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      retryExceptions:
+        - java.lang.RuntimeException
