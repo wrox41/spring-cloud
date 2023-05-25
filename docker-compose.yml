@@ -60,12 +60,12 @@ services:
       - "9411:9411"
     # 1) wsl -d docker-desktop
     # 2) sysctl -w vm.max_map_count=262144
-    environment:
-      - STORAGE_TYPE=elasticsearch
-      # Point the zipkin at the storage backend
-      - ES_HOSTS=elastic-server:9200
-      # Uncomment to see requests to and from elasticsearch
-      - ES_HTTP_LOGGING=BODY
+#    environment:
+#      - STORAGE_TYPE=elasticsearch
+#      # Point the zipkin at the storage backend
+#      - ES_HOSTS=elasticsearch:9200
+#      # Uncomment to see requests to and from elasticsearch
+#      - ES_HTTP_LOGGING=BODY
   alertmanager-server:
     image: prom/alertmanager
     restart: always
