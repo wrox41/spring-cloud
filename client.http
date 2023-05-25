@@ -69,6 +69,7 @@ Content-Type: application/json
 POST http://localhost:8080/api/shop/orders
 Accept: application/json
 Content-Type: application/json
+Authorization: {{ token }}
 
 {
   "entries": [
@@ -108,3 +109,31 @@ POST http://localhost:8888/encrypt
 POST http://localhost:8888/decrypt
 
 e97426f47336171ce6dd6838cba9613b8415de29fdb92c916c5646ce2d4401ad
+
+###
+
+//@no-redirect
+//@no-cookie-jar
+POST http://localhost:8100/realms/training/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=training-client&grant_type=password&username=client&password=123
+
+> {%
+   client.global.set('token', response.body.access_token);
+   client.global.set('refreshToken', response.body.refresh_token);
+ %}
+
+###
+
+//@no-redirect
+//@no-cookie-jar
+POST http://localhost:8100/realms/training/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=training-client&grant_type=refresh_token&refresh_token={{ refreshToken }}
+
+> {%
+    client.global.set('token', response.body.access_token);
+    client.global.set('refreshToken', response.body.refresh_token);
+%}

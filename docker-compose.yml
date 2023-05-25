@@ -103,7 +103,7 @@ services:
       - ./data/postgres:/var/lib/postgresql/data/application
       - ./data/postgres_data:/data
   keycloak:
-    image: quay.io/keycloak/keycloak:20.0.1
+    image: quay.io/keycloak/keycloak:21.1.1
     command:
       - start-dev
     ports:
