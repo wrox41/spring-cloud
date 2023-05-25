@@ -1,2 +1,3 @@
-- dodaj nową implementację adaptera usługi TimeProvider, tak aby czas/znacznik czasowy był pobierany z 
-  zewnętrznego api http://worldtimeapi.org/api/timezone/Europe/Warsaw
+- stwórz usługę raportującą nasłuchującą eventów płatności wysyłanych z payments-service
+- zapisz dane w postaci id, godzina, suma płatności danego dnia
+- dodaj enpoint zwracający raport - lista godzinę + suma płatności  
