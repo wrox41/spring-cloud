@@ -25,4 +25,4 @@ spring:
 #                  kafka:
 #                    binder:
 #                      brokers: localhost:9092
-discount: 10
+discount: "{cipher}15d519679afc3cb66f6e5553e72b9fba5ab269cda49b403756e3a1c6a479b3a3"
