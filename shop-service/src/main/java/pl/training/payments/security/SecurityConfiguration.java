@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -27,11 +26,14 @@ public class SecurityConfiguration {
                     .csrf()
                     .disable()
                 .authorizeHttpRequests()
-                    .requestMatchers("/**").hasAuthority("ADMIN")
+                    .requestMatchers("/**").hasRole("ADMIN")
                 .and()
                     .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                     .sessionManagement()
                     .sessionCreationPolicy(STATELESS)
+               /* .and()
+                    .exceptionHandling()
+                        .authenticationEntryPoint(new KeycloakEntrypoint())*/
                 .and()
                     .build();
     }
