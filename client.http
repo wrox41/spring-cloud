@@ -36,6 +36,10 @@ GET http://localhost:8888/master/payments-service-development.properties
 
 ###
 
+GET http://localhost:8888/main/shop-service.properties
+
+###
+
 POST http://localhost:8080/api/shop/payments
 Accept: application/json
 Content-Type: application/json

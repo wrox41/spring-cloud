@@ -8,3 +8,5 @@ spring:
   cloud:
     config:
       label: main
+encrypt:
+  key: SURMETRIYKEQ
