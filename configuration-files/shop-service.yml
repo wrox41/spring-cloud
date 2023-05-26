@@ -4,8 +4,8 @@ api:
   payments: http://PAYMENTS-SERVICE/payments
 spring:
   cloud:
-    #function:
-    # definition: paymentEventsConsumer
+    function:
+      definition: paymentEventsConsumer
     stream:
       bindings:
         paymentEventsConsumer-in-0:
