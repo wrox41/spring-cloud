@@ -10,7 +10,7 @@ spring:
       bindings:
         paymentEventsConsumer-in-0:
           destination: payment-events
-          group: ${random.uuid} #shop
+          group: shop
 #    stream:
 #      bindings:
 #        productsListener-in-0:
