@@ -12,12 +12,15 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
+import pl.training.payments.adapters.events.PaymentEventDto;
 import pl.training.payments.domain.ConstantDiscountCalculator;
 import pl.training.payments.domain.DiscountCalculator;
 import pl.training.payments.domain.OrderProcessor;
 import pl.training.payments.ports.PaymentsService;
 import pl.training.payments.ports.ShopService;
 import pl.training.payments.security.RestTemplateTokenInterceptor;
+
+import java.util.function.Consumer;
 
 @Log
 @EnableFeignClients
@@ -47,6 +50,13 @@ public class ShopConfiguration {
     @Bean
     public Capability capability(final MeterRegistry registry) {
         return new MicrometerCapability(registry);
+    }
+
+    @Bean
+    public Consumer<PaymentEventDto> paymentEventsConsumer() {
+        return paymentEventDto -> {
+            log.info("New payment update: id: %s, new status: %s".formatted(paymentEventDto.getPaymentId(), paymentEventDto.getPaymentStatus()));
+        };
     }
 
 }
