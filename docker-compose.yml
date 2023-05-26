@@ -116,3 +116,11 @@ services:
       DB_USER: "admin"
       DB_PASSWORD: "admin"
       DB_DATABASE: "shop"
+  configuration-server:
+    image: configuration-server
+    restart: always
+    environment:
+      PORT: 8888
+      GIT_URI: https://github.com/landrzejewski/spring-cloud
+      KAFKA_BROKERS: kafka-server
+      ENCRYPT_KEY: asdasdasdk
