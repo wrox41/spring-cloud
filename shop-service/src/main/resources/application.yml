@@ -8,14 +8,6 @@ spring:
   cloud:
     config:
       label: main
-    function:
-      definition: paymentEventsConsumer
-    stream:
-      bindings:
-        paymentEventsConsumer-in-0:
-          destination: payment-events
-          group: shop
-
 encrypt:
   key: SURMETRIYKEQ
 resilience4j.retry:
