@@ -4,11 +4,11 @@ api:
   payments: http://PAYMENTS-SERVICE/payments
 spring:
   cloud:
-   # function:
-   #   definition: paymentEventsConsumer
+    function:
+      definition: paymentEventsConsumer
     stream:
       bindings:
-        kafkaPaymentEventsConsumer-in-0:
+        paymentEventsConsumer-in-0:
           destination: payment-events
           group: ${random.uuid} #shop
 #    stream:

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.function.Consumer;
 
 @Log
-@Component
+@Component("paymentEventsConsumer")
 public class KafkaPaymentEventsConsumer implements Consumer<PaymentEventDto> {
 
     @Override
